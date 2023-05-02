@@ -6,5 +6,70 @@
 {% endblock %}
 
 {% block body %}
-    
+    <header>
+        <nav class="collapse fondo-vermello text-white" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col pt-4">
+                        <ul class="list-unstyled d-flex justify-content-center gap-4 flex-wrap">
+                            <li><a href="#" class="text-white text-decoration-none">Carta Cafetería</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">Carta Latorta</a></li>
+                            <li><a href="#" class="text-white text-decoration-none">Xestión(Admin)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="navbar navbar-dark fondo-vermello">
+            <div class="container">
+                <a href="/" class="navbar-brand d-flex align-items-center">
+                    <strong class="text-white">Café Latorta</strong>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Cambiar nav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="fondo-oscuro">
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto text-white">
+                    <h1 class="fw-light">BENVID@</h1>
+                    <p class="lead">En Café Latorta queremos que disfrutes da túa bebida preferida acompañada dunha porción a torta que máis che agrade.</p>
+                    <p class="lead">A continuación atoparás as cartas de bebidas e tortas que temos dispoñibles para que poidas ver e escoller ao teu gusto.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="py-5">
+            <h2 class="text-white text-center fw-light pb-4">CARTA BEBIDAS</h2>
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+                    <div class="col">
+                        <div class="card fondo-vermello text-white">
+                            <img src="/assets/img/refrescos.png" alt="Refrescos" class="bd-placeholder-img card-img-top">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="card-text">CocaCola, Aquarius, Fanta e Nestea</span>
+                                    <strong class="ms-2 fs-4">2€</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="text-white py-5 fondo-vermello">
+        <div class="container">
+            <p class="float-end mb-1">
+                <a href="#" class="text-decoration-none text-white">Ir arriba</a>
+            </p>
+            <p class="mb-1">Todos los derechos reservados Café Latorta - &copy; 2023</p>
+        </div>
+    </footer>
 {% endblock %}
