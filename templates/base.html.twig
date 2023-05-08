@@ -33,7 +33,7 @@
                                         <li><strong><a href="{{ path('app_proveedor_index') }}" class="text-white text-decoration-none">Xestión Proveedores</a></strong></li>
                                     {% endif %}
                                     <!--Se a sesión está iniciada mostramos botón de pechar sesión, se non está iniciada mostramos botón de iniciar sesión-->
-                                    <li><strong><a href="{{ app.user ? path('app_register') : path('app_login') }}" class="text-white text-decoration-none">{{ app.user ? "Pechar sesión" : "Iniciar sesión" }}{{ app.user ? "("~app.user.email~")" : "" }}</a></strong></li>
+                                    <li><strong><a href="{{ app.user ? path('app_logout') : path('app_login') }}" class="text-white text-decoration-none">{{ app.user ? "Pechar sesión" : "Iniciar sesión" }}{{ app.user ? "("~app.user.email~")" : "" }}</a></strong></li>
                                 </ul>
                             </div>
                         </div>
