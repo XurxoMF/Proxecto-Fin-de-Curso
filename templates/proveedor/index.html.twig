@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <div class="py-5 px-2 p-lg-5 text-white text-center">
+        <h1 class="mb-4">Listado de proveedores</h1>
+
+        <table class="table text-white">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Tlf</th>
+                    <th>Gmail</th>
+                    <th>Accións</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for proveedor in proveedors %}
+                    <tr>
+                        <td>{{ proveedor.nome }}</td>
+                        <td>{{ proveedor.tlf }}</td>
+                        <td>{{ proveedor.gmail }}</td>
+                        <td>
+                            <a href="{{ path('app_proveedor_show', {'id': proveedor.id}) }}" class="me-1">Ver</a>
+                            <a href="{{ path('app_proveedor_edit', {'id': proveedor.id}) }}">Editar</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">Non se atoparon rexistros</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_proveedor_new') }}">Crear novo proveedor</a>
+    </div>
+{% endblock %}

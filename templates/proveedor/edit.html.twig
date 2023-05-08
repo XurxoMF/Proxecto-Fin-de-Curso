@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <div class="w-100 h-100vh d-flex align-items-center justify-content-center fondo-oscuro text-white">
+        <div class="w-auto text-center p-4">
+            <h1 class="mb-4">Editar proveedor</h1>
+
+            {{ include('proveedor/_form.html.twig', {'button_label': 'Actualizar'}) }}
+
+            <a href="{{ path('app_proveedor_index') }}">Volver ao listado de proveedores</a>
+
+            {{ include('proveedor/_delete_form.html.twig') }}
+        </div>
+    </div>
+{% endblock %}

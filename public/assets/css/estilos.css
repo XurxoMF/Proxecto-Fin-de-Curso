@@ -1,0 +1,31 @@
+.h-100vh {
+    height: 100vh
+}
+
+.min-h-100vh {
+    min-height: 100vh
+}
+
+.h-fit {
+    height: fit-content
+}
+
+.fondo-vermello{
+    background-color: #7a0002
+}
+
+.fondo-oscuro{
+    background-color: #212121
+}
+
+.btn-vermello {
+    color:#fff;
+    background-color: #7a0002;
+    border-color: #7a0002;
+}
+
+.btn-vermello:hover {
+    color:#fff;
+    background-color: #9c0003;
+    border-color: #9c0003;
+}
