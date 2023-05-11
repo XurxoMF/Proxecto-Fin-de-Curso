@@ -33,6 +33,7 @@
                 {% endfor %}
             </tbody>
         </table>
+        <div class="w-100 d-flex align-items-center justify-content-center">{{ pagerfanta(produtos) }}</div>
 
         <a href="{{ path('app_produto_new') }}">Crear novo produto</a>
     </div>

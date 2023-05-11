@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Proveedor;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\QueryBuilder;
 
 /**
  * @extends ServiceEntityRepository<Proveedor>
@@ -37,6 +38,11 @@ class ProveedorRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+    }
+    
+    public function findAllPager(): QueryBuilder
+    {
+        return $this->createQueryBuilder('p');
     }
 
 //    /**

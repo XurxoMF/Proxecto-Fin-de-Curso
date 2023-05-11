@@ -9,15 +9,23 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Pagerfanta\Pagerfanta;
+use Pagerfanta\Doctrine\ORM\QueryAdapter;
 
 #[Route('/produtos')]
 class ProdutoController extends AbstractController
 {
     #[Route('/', name: 'app_produto_index', methods: ['GET'])]
-    public function index(ProdutoRepository $produtoRepository): Response
+    public function index(ProdutoRepository $produtoRepository, Request $request): Response
     {
+        $queryBuilder = $produtoRepository->findAllPager();
+        
+        $pagerfanta = new Pagerfanta(new QueryAdapter($queryBuilder));
+        $pagerfanta->setMaxPerPage(10);
+        $pagerfanta->setCurrentPage($request->query->get('page', 1));
+        
         return $this->render('produto/index.html.twig', [
-            'produtos' => $produtoRepository->findAll(),
+            'produtos' => $pagerfanta,
         ]);
     }
 
