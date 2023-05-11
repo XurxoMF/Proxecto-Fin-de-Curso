@@ -5,7 +5,7 @@
             <div class="row py-lg-5">
                 <div class="col-lg-6 col-md-8 mx-auto text-white">
                     <h1 class="fw-light">BENVID@</h1>
-                    <p class="lead">En Café Latorta queremos que disfrutes da túa bebida preferida acompañada dunha porción a torta que máis che agrade.</p>
+                    <p class="lead">En Café Latorta queremos que disfrutes da túa bebida preferida acompañada dunha porción da torta que máis che agrade.</p>
                     <p class="lead">A continuación atoparás as cartas de bebidas e tortas que temos dispoñibles para que poidas ver e escoller ao teu gusto.</p>
                 </div>
             </div>
@@ -38,17 +38,21 @@
             <h2 id="carta-latorta" class="text-white text-center fw-light pb-4">CARTA LATORTA</h2>
             <div class="container">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
-                    <div class="col">
-                        <div class="card fondo-vermello text-white">
-                            <img src="/assets/img/refrescos.png" alt="Refrescos" class="bd-placeholder-img card-img-top">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="card-text">CocaCola, Aquarius, Fanta e Nestea</span>
-                                    <strong class="ms-2 fs-4">2€</strong>
+                    {% for torta in tortas %}
+                        <div class="col mx-auto">
+                            <div class="card fondo-vermello text-white h-100">
+                                <div class="card-body d-flex flex-column justify-content-center align-items-center w-100 h-100">
+                                    <div class='h-100 d-flex justify-content-center align-items-center'>
+                                        <img src="/assets/img/{{ torta[2] }}" alt="{{ torta[0] }}" class="bd-placeholder-img card-img-top">
+                                    </div>
+                                    <div class="w-100 d-flex justify-content-between align-items-center">
+                                        <span class="card-text">{{ torta[0] }}</span>
+                                        <strong class="ms-2 fs-4">{{ torta[1] }}€</strong>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

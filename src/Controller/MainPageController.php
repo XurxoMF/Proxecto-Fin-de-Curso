@@ -33,9 +33,27 @@ class MainPageController extends AbstractController {
         ["Zumo", 1.90, "zumo.png"],
         ["Zumo natural", 2.30, "zumo_natural.png"]
     ];
+    
+    //Array con ["nome a mostrar", prezo, "imaxe a mostrar"]
+    public static $tortas = [
+        ["Torta de nata", 16, "torta_nata.png"],
+        ["Torta de chocolate", 20, "torta_chocolate.png"],
+        ["Torta de arándanos", 20, "torta_arandanos.png"],
+        ["Torta de sabugueiro", 20, "torta_baya_de_sauco.png"],
+        ["Torta de caramelo", 20, "torta_caramelo.png"],
+        ["Torta de dulce de leite", 20, "torta_dulce_de_leche.png"],
+        ["torta de ferrero rochert", 20, "torta_ferrero_rochert.png"],
+        ["Torta de kinder", 20, "torta_kinder.png"],
+        ["Torta de noz", 20, "torta_nuez.png"],
+        ["Torta de praliné", 20, "torta_praline.png"],
+    ];
 
     #[Route(path: '/', name: 'app_mainpage')]
     public function mainPage(): Response {
-        return $this->render('mainpage.html.twig', ["bebidas" => $this::$bebidas]);
+        return $this->render('mainpage.html.twig', [
+                    "bebidas" => $this::$bebidas,
+                    "tortas" => $this::$tortas
+        ]);
     }
+
 }
