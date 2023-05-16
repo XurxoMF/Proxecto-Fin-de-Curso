@@ -8,20 +8,16 @@
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>Tlf</th>
-                    <th>Gmail</th>
                     <th>Accións</th>
                 </tr>
             </thead>
             <tbody>
                 {% for proveedor in proveedores %}
                     <tr>
-                        <td>{{ proveedor.nome }}</td>
-                        <td>{{ proveedor.tlf }}</td>
-                        <td>{{ proveedor.gmail }}</td>
+                        <td><a href="{{ path('app_proveedor_show', {'id': proveedor.id}) }}">{{ proveedor.nome }}</a></td>
                         <td>
-                            <a href="{{ path('app_proveedor_show', {'id': proveedor.id}) }}" class="me-1">Ver</a>
-                            <a href="{{ path('app_proveedor_edit', {'id': proveedor.id}) }}">Editar</a>
+                            <a href="mailto:{{ proveedor.gmail }}" class="me-2">Gmail</a>
+                            <a href="tel:+34{{ proveedor.gmail }}">Tel</a>
                         </td>
                     </tr>
                 {% else %}
