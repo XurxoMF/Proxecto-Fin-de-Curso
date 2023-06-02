@@ -1,7 +1,0 @@
-1. Importar "Proxecto Fin De Curso.ova" con Virtual Box.
-2. Encender a máquina virtual.
-3. Listo! Accede dende http://proxecto.localhost:8080/ dende a máquina local.
-
-A conta de administración con acceso a parte de xestión é "admin@gmail.com" contrasinal "123abc.".
-A conta de usuario estandar xa creada é "test1@gmail.com" contrasinal "123abc.".
-Pódense crear novas contas de usuario estandar pero non de usuario admin.
